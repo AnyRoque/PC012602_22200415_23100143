@@ -1,0 +1,152 @@
+{
+  "info": {
+    "_postman_id": "c60cadcf-be43-4ecd-82db-7277f518d4fe",
+    "name": "PC01 Taller Mecanico",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57954015"
+  },
+  "item": [
+    {
+      "name": "Listar TipoServicio",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5166/api/TipoServicio",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5166",
+          "path": [
+            "api",
+            "TipoServicio"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener TipoServicio",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5166/api/TipoServicio/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5166",
+          "path": [
+            "api",
+            "TipoServicio",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear TipoServicio:",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5166/api/TipoServicio",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5166",
+          "path": [
+            "api",
+            "TipoServicio"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Editar TipoServicio",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"id\": 4, \"nombre\": \"Alineamiento 3D\", \"precioBase\": 110.00 }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5166/api/TipoServicio/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5166",
+          "path": [
+            "api",
+            "TipoServicio",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar TipoServicio",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear OrdenServicio",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"descripcionProblema\": \"Pierde aceite\", \"vehiculoId\": 2, \"tipoServicioId\": 1 }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5166/api/OrdenServicio",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5166",
+          "path": [
+            "api",
+            "OrdenServicio"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
