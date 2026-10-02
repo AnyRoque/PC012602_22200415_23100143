@@ -1,0 +1,50 @@
+@host = http://localhost:5166
+
+### ===== TipoServicio (Pregunta 4) =====
+GET {{host}}/api/TipoServicio
+
+###
+GET {{host}}/api/TipoServicio/1
+
+###
+POST {{host}}/api/TipoServicio
+Content-Type: application/json
+
+{ "nombre": "Alineamiento y balanceo", "precioBase": 90.00 }
+
+###
+PUT {{host}}/api/TipoServicio/4
+Content-Type: application/json
+
+{ "id": 4, "nombre": "Alineamiento y balanceo 3D", "precioBase": 110.00 }
+
+###
+DELETE {{host}}/api/TipoServicio/4
+
+### ===== OrdenServicio (Pregunta 5) =====
+GET {{host}}/api/OrdenServicio
+
+###
+GET {{host}}/api/OrdenServicio/1
+
+###
+POST {{host}}/api/OrdenServicio
+Content-Type: application/json
+
+{ "descripcionProblema": "Pierde aceite", "vehiculoId": 2, "tipoServicioId": 1 }
+
+###
+PUT {{host}}/api/OrdenServicio/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "descripcionProblema": "Ruido al frenar - cambio de pastillas",
+  "costoEstimado": 220.00,
+  "estado": "En Proceso",
+  "vehiculoId": 1,
+  "tipoServicioId": 3
+}
+
+###
+DELETE {{host}}/api/OrdenServicio/3

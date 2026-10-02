@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="UESAN.TALLER.API/UESAN.TALLER.API.csproj" />
+  <Project Path="UESAN.TALLER.CORE/UESAN.TALLER.CORE.csproj" />
+</Solution>
