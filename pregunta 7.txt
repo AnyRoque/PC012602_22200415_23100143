@@ -1,0 +1,15 @@
+pregunta 7:
+a. ¿Qué dificultades tuviste durante el scaffolding y cómo las solucionaste?
+Durante el scaffolding, la principal dificultad fue asegurar que las entidades y el DbContext se ubicaran en las carpetas separadas ("Core" e "Infrastructure") para cumplir con la arquitectura solicitada. Lo solucionamos investigando y utilizando los parámetros -OutputDir Core y -ContextDir Infrastructure dentro del comando Scaffold-DbContext en la consola. Además, tuvimos un contratiempo inicial con la visualización del SDK de .NET 10 al crear el proyecto, el cual resolvimos instalando el componente específico desde el Visual Studio Installer.
+b. ¿Qué diferencias notaste entre usar un controlador autogenerado y uno con
+repository? ¿Qué enfoque prefieres?
+El controlador autogenerado acopla directamente la capa de presentación con el DbContext, lo cual es rápido para prototipos pero rompe la separación de responsabilidades y dificulta las pruebas unitarias. Por otro lado, el controlador con Repository se apoya en interfaces (abstracción), por lo que la Web API ignora cómo se guardan los datos, logrando un código más limpio. Preferimos el enfoque con Repository, ya que facilita el testing, promueve el desacoplamiento y hace que el proyecto sea mucho más escalable a largo plazo.
+c. ¿Qué buenas prácticas implementaste (en código real) y por qué?
+Separación de responsabilidades (SoC): Dividimos la solución física y lógicamente en capas (Presentación/WebAPI, Core e Infrastructure) para aislar la lógica de negocio del acceso a datos.
+
+Inyección de Dependencias (DI): Registramos el DbContext y nuestros repositorios/servicios en el contenedor de .NET, lo que evita instanciar objetos manualmente con new y reduce el acoplamiento.
+
+Uso de DTOs: Implementamos Data Transfer Objects en la carpeta Core para transferir datos hacia los endpoints sin exponer directamente las entidades de nuestra base de datos.
+d. ¿Usaste herramientas de IA en esta práctica? (Tranquilo(a) que si es válido) ¿Qué
+herramientas usaste y en que parte del proyecto?
+Sí, utilizamos Gemini (Inteligencia Artificial) como apoyo permitido para agilizar el desarrollo. Lo usamos específicamente en tres partes del proyecto:   Para redactar el script SQL estructurado de creación de tablas y relaciones.Para estructurar los comandos exactos de PowerShell necesarios para hacer el scaffolding dirigido a múltiples carpetas.Para diagnosticar problemas del entorno de desarrollo, como la correcta instalación del SDK de .NET 10 y el "congelamiento" del servidor Kestrel al probar con Postman.
